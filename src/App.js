@@ -1,25 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { useState } from 'react';
+import DateGameCard from './Components/DateGameCard';
+import Start from './Components/Start';
+import Score from './Components/Score';
 
-function App() {
+const App = () => {
+  const [genre, setGenre] = useState('')
+  const [time, setTime] = useState('')
+  const [turnCounter, setTurnCounter] = useState(0)
+  const [score, setScore] = useState(0)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-container'>
+
+      {turnCounter === 0 ?
+        <Start genre={genre} setGenre={setGenre} turnCounter={turnCounter} setTurnCounter={setTurnCounter} time={time} setTime={setTime} />
+        :
+        null
+      } 
+        {console.log(`app.js genre:`, genre)}
+      {turnCounter >= 1 && turnCounter <= 10 ? 
+        <DateGameCard genre={genre} turnCounter={turnCounter} setTurnCounter={setTurnCounter} setScore={setScore} score={score} time={time} />
+        :
+        null
+      }
+      {turnCounter >= 10 ? 
+        <Score score={score} setScore={setScore} setTurnCounter={setTurnCounter} setGenre={setGenre} setTime={setTime} />
+        :
+        null
+      }
     </div>
-  );
+  )
 }
 
 export default App;
