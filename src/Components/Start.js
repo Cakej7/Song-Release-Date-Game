@@ -5,19 +5,19 @@ export const Start = ({ turnCounter, setTurnCounter, genre, setGenre, time, setT
 
     return (
         <div className='start-container'>
-            <div >
+            <div className='start-flex'>
                 <div>
-                    <h3 className='start-choices'>Genre:</h3>
-                    <GenreRadio genre={genre} setGenre={setGenre} />
+                    <h3 className='start-genre-text'>Choose Genre:</h3>
+                    <GenreRadio className='start-genre-flex' genre={genre} setGenre={setGenre} />
                 </div>
 
                 <Button
-                    id='start-button'
+                    className='start-button'
                     onClick={() => {
                         setTurnCounter(turnCounter + 1)
                     }}
                 >
-                Start
+                Play
                 </Button>
             </div>
         </div>

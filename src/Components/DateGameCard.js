@@ -23,7 +23,7 @@ export default function DateGameCard({ genre, turnCounter, setTurnCounter, setSc
   }, [songList]);
 
   useEffect(() => {
-    // console.log('shuffledSongs:', shuffledSongs);
+    console.log('shuffledSongs:', shuffledSongs);
   }, [shuffledSongs]);
 
   let genreRap = 'chart_genre=rap&'
@@ -101,7 +101,7 @@ return (
           <Card.Img
             className='card-img'
             variant="top"
-            src={currentSong.item.header_image_thumbnail_url}
+            src={currentSong.item.header_image_url}
           />
           <Card.Body>
             <Card.Title>{currentSong.item.title}</Card.Title>

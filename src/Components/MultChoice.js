@@ -34,9 +34,9 @@ export const MultipleChoice = ({ currentSong, currentSongIndex, setCurrentSongIn
             return (
                 <div
                     key={key} 
-                    className='mult-choice-buttons'
                 > 
                         <Button variant='dark'
+                            className='mult-choice-buttons'
 
                             onClick={() => {
                                 if (year === correctDate && currentSongIndex <= 9) {
@@ -56,7 +56,7 @@ export const MultipleChoice = ({ currentSong, currentSongIndex, setCurrentSongIn
                                     Swal.fire({
                                         position: 'center',
                                         icon: 'error',
-                                        title: `Wrong! The correct answer is ${correctDate}`,
+                                        title: `Wrong! The correct year is ${correctDate}`,
                                         showConfirmButton: false,
                                         timer: 1500
                                     })

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Mukta:wght@700&display=swap');
+
+@font-face {
+    font-family: MusicLogo;
+    src: url(../public/Musicografi.ttf);
+}
+
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -51,13 +58,20 @@ table {
 
 body {
     text-align: center;
+	font-family: 'Mukta', sans-serif;
 }
 
 .app-container {
 	display: flex;
 	flex-direction: column;
-    justify-content: center;
-    align-items: center;	
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header {
+	margin-top: 25px;
+	font-family: 'MusicLogo';
+	font-size: 600%;
 }
 
 .loading-screen {
@@ -71,6 +85,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+	margin-bottom: 20px;
+	font-size: 200%;
+	width: 100%;
 }
 
 .card-img {
@@ -86,41 +103,70 @@ body {
 }
 
 .mult-choice-buttons {
-    margin: 2px;
+    margin: 3px;
+	background-color: black;
+}
+
+.mult-choice-buttons:hover {
+	background-color: black;
 }
 
 .start-container {
 	display: flex;
     flex-direction: column;
     justify-content: center;
-	width: 50%;
-	height: 50vh;
-	margin-top: 20px;
-	padding: 20px;
+	width: 80%;
+	padding: 10px;
 	border: black solid 2px;
 }
 
-#start-button {
+.start-genre-buttons {
+	margin-bottom: 10px;
+	margin-left: 5px;
+	width: 40%;
+	/* background-color: black; */
+	border: solid black 1px;
+}
+
+.start-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 70%;
+	height: 100px;
+	font-size: 400%;
+	background-color: black;
+	border: solid black 1px;
+}
+
+.start-button:hover {
+	background-color: rgba(0, 0, 0, 0.431);
+	background-image: url('../public/1920-piano-synthesizer-keys-music-background-black-and-white.png');
+	text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+}
+
+.start-flex {
 	display: flex;
-    flex-direction: column;
+	flex-direction: column;
     justify-content: center;
 	align-items: center;
-	margin-top: 20px;
-	width: 100%;
 }
 
-.start-genre-buttons {
-	margin-right: 15px;
+.start-genre-flex {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+	align-items: center;
 }
 
-.start-choices {
+.start-genre-text {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	font-size: 200%;
 }
 
 #score-progress-bar {
 	width: 50vw;
-	margin-top: 40vh;
+	margin-top: 25vh;
 }
 
 #score-you-scored {
@@ -131,6 +177,20 @@ body {
 	margin-top: 25px;
 }
 
-.genre-button {
-	margin-right: 10px;
+@media (max-width: 829px) {
+	.header {
+		font-size: 400%;
+	}
+}
+
+@media (max-width: 553vw) {
+	.header {
+		font-size: 300%;
+	}
+}
+
+@media (min-width: 830px) {
+	.header {
+		font-size: 600%;
+	}
 }

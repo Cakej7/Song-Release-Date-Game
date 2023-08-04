@@ -5,7 +5,7 @@ const GenreRadio = ({ genre, setGenre }) => {
     const [genreRadioValue, setGenreRadioValue] = useState('1');
 
     const genreRadios = [
-      { name: 'All Genres', value: '1', genre: '' },
+      { name: 'All', value: '1', genre: '' },
       { name: 'Rap', value: '2', genre: 'rap' },
       { name: 'R&B', value: '3', genre:'rb' },
       { name: 'Rock', value: '4', genre: 'rock' }
@@ -16,6 +16,7 @@ const GenreRadio = ({ genre, setGenre }) => {
             {genreRadios.map((gRadio, idx) => (
                 <ToggleButton
                     className='start-genre-buttons'
+                    variant="outline-dark"
                     key={idx}
                     id={`radio-${idx}`}
                     type="radio"
